@@ -1,0 +1,22 @@
+/* #canvasDiv {
+  padding-top: 30px;
+  background-image: url(../img/breeze.webp);
+} */
+#editIcon {
+  font-size: 42px;
+}
+#thicknessIcon {
+  font-size: 42px;
+}
+#delete_canvas {
+  font-size: 42px;
+}
+.drag-and-drop {
+  cursor: move;
+  position: absolute;
+  z-index: 1000;
+}
+
+.drag {
+  z-index: 1001;
+}

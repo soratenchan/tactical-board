@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/sample.css" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <title>tactical board</title>
+  </head>
+
+  <body>
+    <div class="flex flex-row py-11 bg bg-dark-700">
+      <div class="w-1/3">
+        <!-- atk or def-->
+        <div class="flex flex-row justify-evenly mb-5">
+          <div class="p-3 px-8 bg-red-300 rounded-lg" id="atk">攻撃</div>
+          <div class="p-3 px-8 bg-green-300 rounded-lg" id="def">防衛</div>
+        </div>
+        <!-- map -->
+        <div class="flex flex-col space-y-3" id="mapBtn">
+         
+        </div>
+        <!-- pen -->
+        <div class="flex flex-row justify-evenly pt-5">
+          <div class="flex items-center">
+            <span
+              class="material-icons text-red-200 text-5xl cursor-pointer"
+              id="editIcon"
+              >edit</span
+            >
+            <label id="changeColor"><input id="color" type="color" /></label>
+          </div>
+          <div class="flex items-center">
+            <span class="material-icons text-red-200" id="thicknessIcon"
+              >drive_file_rename_outline</span
+            >
+            <input
+              class="text-black"
+              id="width"
+              type="number"
+              min="1"
+              max="30"
+            />
+          </div>
+          <div class="flex items-center">
+            <span
+              class="material-icons text-red-200 cursor-pointer"
+              id="delete_canvas"
+              value="クリア"
+              onClick="delete_canvas()"
+            >
+              auto_fix_normal
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- main -->
+      <div class="flex flex-col" id="main">
+        <div
+          class="border-2 border-red-300 bg-dark-900 bg-center bg-cover"
+          style="background-image: url(./img/breeze.webp)"
+          id="map"
+        >
+          <canvas class="" id="canvas" width="800" height="700"></canvas>
+        </div>
+      </div>
+      <!-- agent -->
+      <div class="w-1/3 flex flex-row">
+        <div class="flex flex-col dragcontainer pl-2" id="agent">
+          <div class="flex flex-col dragcontainer w-10 h-10"><div class="drag-and-drop bg-green-300 rounded-full p-0.5 cursor-pointer"id="red-box"><img src="./img/download-12.png" alt="" class="w-8 h-8" id="test"/></div></div>
+        </div>
+        <div class="flex flex-col dragcontainer pl-1" id="agent2"></div>
+        <div class="flex flex-col dragcontainer pl-5" id="enemy-agent"></div>
+        <div class="flex flex-col dragcontainer pl-1" id="enemy-agent2"></div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
